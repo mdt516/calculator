@@ -1,6 +1,52 @@
 let output = document.getElementById("output");
 
-let buffer = "";
+let buffer = [];
+
+//checks to see if buffer has more than one operator
+if(buffer.includes("+"))
+{
+    switch(buffer.includes())
+    {
+        case "*":
+        case "-":
+        case "/":
+            errorTooManyOperators();
+            break;
+    }
+}
+else if(buffer.includes("-"))
+{
+    switch(buffer.includes())
+    {
+        case "*":
+        case "+":
+        case "/":
+            errorTooManyOperators();
+            break;
+    }
+}
+else if(buffer.includes("*"))
+{
+    switch(buffer.includes())
+    {
+        case "+":
+        case "-":
+        case "/":
+            errorTooManyOperators();
+            break;
+    }
+}
+else if(buffer.includes("/"))
+{
+    switch(buffer.includes())
+    {
+        case "*":
+        case "-":
+        case "+":
+            errorTooManyOperators();
+            break;
+    }
+}
 
 //Initialzing number buttons and adding functionality
 const zero = document.getElementById("zero");
@@ -77,3 +123,15 @@ function div(num1, num2)
 {
     return num1 / num2;
 }
+
+function errorTooManyOperators()
+{
+    console.error("Invalid expression. Please only enter the first integer, the operation, and the second integer. \n" 
+        +"The expression will now be cleared.");
+    while(buffer.length > 0)
+    {
+        buffer.pop();
+    }
+}
+
+//TODO: possibly add inputs to buffer. maybe evaluate multiple expressions and implement order of operations
