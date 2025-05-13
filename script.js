@@ -1,6 +1,7 @@
 let output = document.getElementById("output");
 
-let buffer = [];
+let buffer = "";
+//TODO add buffer parsing
 
 //checks to see if buffer has more than one operator
 if(buffer.includes("+"))
@@ -47,6 +48,9 @@ else if(buffer.includes("/"))
             break;
     }
 }
+
+
+
 
 //Initialzing number buttons and adding functionality
 const zero = document.getElementById("zero");
@@ -100,29 +104,47 @@ nine.addEventListener("click", function() {
 });
 
 
+
+
+//TODO add operator functionality
 //Addition
 const additionButton = document.getElementById("addition");
 additionButton.addEventListener("click", sum);
 
 function sum(num1, num2)
 {
-    output.innerHTML = num1 + num2;
+    buffer += "+";
 }
+
+//Subtraction
+const subtractButton = document.getElementById("subtract");
+subtractButton.addEventListener("click", sub);
 
 function sub(num1, num2)
 {
-    return num1 - num2;
+    buffer += "-";
 }
+
+//Subtraction
+const multiplicationButton = document.getElementById("multiplication");
+multiplicationButton.addEventListener("click", mult);
 
 function mult(num1, num2)
 {
     return num1 * num2;
 }
 
+//Subtraction
+const divisionButton = document.getElementById("division");
+divisionButton.addEventListener("click", div);
+
 function div(num1, num2)
 {
     return num1 / num2;
 }
+
+
+
 
 function errorTooManyOperators()
 {
@@ -133,5 +155,3 @@ function errorTooManyOperators()
         buffer.pop();
     }
 }
-
-//TODO: possibly add inputs to buffer. maybe evaluate multiple expressions and implement order of operations
