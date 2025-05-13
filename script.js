@@ -1,8 +1,12 @@
 let output = document.getElementById("output");
 
+let input = "";
+
 //Initialzing buttons and adding functionality
 const zero = document.getElementsByName("0");
 const one = document.getElementsByName("1");
+//TODO: add functionality to write the ouptut of buttons to buffer
+
 const two = document.getElementsByName("2");
 const three = document.getElementsByName("3");
 const four = document.getElementsByName("4");
