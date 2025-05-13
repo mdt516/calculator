@@ -158,26 +158,11 @@ function errorTooManyOperators(str) {
 }
 
 //checks if a number is not present in the buffer when trying to do an operation
-//TODO finish errorNoInts()
 function errorNoInts()
 {
-    switch (buffer.includes()) {
-        case '0':
-        case '1':
-        case '2':
-        case '3':
-        case '4':
-        case '5':
-        case '6':
-        case '7':
-        case '8':
-        case '9':
-            return false;
-        default:
-            console.error("Please input an integer before attempting any operations. The input will be cleared.")
-            buffer = "";
-            return true;
-    }
+    let hasInt = /\d/.test(buffer); //regex to find if a digit exists
+    console.error("Please input a number before attempting any operations.");
+    return !hasInt;
 }
 
 
