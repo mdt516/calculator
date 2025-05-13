@@ -2,7 +2,7 @@ let output = document.getElementById("output");
 
 let buffer = "";
 
-//Initialzing buttons and adding functionality
+//Initialzing number buttons and adding functionality
 const zero = document.getElementById("zero");
 zero.addEventListener("click", function() {
     buffer += "0";
