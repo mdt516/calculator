@@ -63,7 +63,7 @@ const additionButton = document.getElementById("addition");
 additionButton.addEventListener("click", sum);
 
 function sum() {
-    if (!errorTooManyOperators("+"))
+    if (!errorTooManyOperators("+") && !errorNoInts())
         buffer += "+";
 }
 
@@ -72,7 +72,7 @@ const subtractionButton = document.getElementById("subtraction");
 subtractionButton.addEventListener("click", sub);
 
 function sub() {
-    if (!errorTooManyOperators("-"))
+    if (!errorTooManyOperators("-") && !errorNoInts())
         buffer += "-";
 }
 
@@ -81,7 +81,7 @@ const multiplicationButton = document.getElementById("multiplication");
 multiplicationButton.addEventListener("click", mult);
 
 function mult() {
-    if (!errorTooManyOperators("*"))
+    if (!errorTooManyOperators("*") && !errorNoInts())
         buffer += "*";
 }
 
@@ -90,7 +90,7 @@ const divisionButton = document.getElementById("division");
 divisionButton.addEventListener("click", div);
 
 function div() {
-    if (!errorTooManyOperators("/"))
+    if (!errorTooManyOperators("/") && !errorNoInts())
         buffer += "/";
 }
 
@@ -156,3 +156,42 @@ function errorTooManyOperators(str) {
     }
     else return false;
 }
+
+//checks if a number is not present in the buffer when trying to do an operation
+//TODO finish errorNoInts()
+function errorNoInts()
+{
+    switch (buffer.includes()) {
+        case '0':
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+            return false;
+        default:
+            console.error("Please input an integer before attempting any operations. The input will be cleared.")
+            buffer = "";
+            return true;
+    }
+}
+
+
+//TODO add evaluation of buffer
+const equals = document.getElementById("equals");
+equals.addEventListener("click", eval());
+
+function eval()
+{
+
+}
+
+//TODO add output to screen
+
+//TODO add live input display and output, with error messages showing in the app UI
+
+//TODO improve UI
