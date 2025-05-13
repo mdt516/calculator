@@ -3,21 +3,20 @@ let output = document.getElementById("output");
 let buffer = "";
 
 //Initialzing buttons and adding functionality
-const zero = document.getElementsByName("0");
-const one = document.getElementsByName("1")
+const zero = document.getElementById("zero");
+const one = document.getElementById("one");
 one.addEventListener("click", function() {
     buffer += "1";
-    console.log(buffer);
 });
 
-const two = document.getElementsByName("2");
-const three = document.getElementsByName("3");
-const four = document.getElementsByName("4");
-const five = document.getElementsByName("5");
-const six = document.getElementsByName("6");
-const seven = document.getElementsByName("7");
-const eight = document.getElementsByName("8");
-const nine = document.getElementsByName("9");
+const two = document.getElementById("two");
+const three = document.getElementById("three");
+const four = document.getElementById("four");
+const five = document.getElementById("five");
+const six = document.getElementById("six");
+const seven = document.getElementById("seven");
+const eight = document.getElementById("eight");
+const nine = document.getElementById("nine");
 
 
 //Addition
