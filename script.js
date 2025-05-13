@@ -1,157 +1,158 @@
 let output = document.getElementById("output");
 
 let buffer = "";
-//TODO add buffer parsing
-
-//checks to see if buffer has more than one operator
-if(buffer.includes("+"))
-{
-    switch(buffer.includes())
-    {
-        case "*":
-        case "-":
-        case "/":
-            errorTooManyOperators();
-            break;
-    }
-}
-else if(buffer.includes("-"))
-{
-    switch(buffer.includes())
-    {
-        case "*":
-        case "+":
-        case "/":
-            errorTooManyOperators();
-            break;
-    }
-}
-else if(buffer.includes("*"))
-{
-    switch(buffer.includes())
-    {
-        case "+":
-        case "-":
-        case "/":
-            errorTooManyOperators();
-            break;
-    }
-}
-else if(buffer.includes("/"))
-{
-    switch(buffer.includes())
-    {
-        case "*":
-        case "-":
-        case "+":
-            errorTooManyOperators();
-            break;
-    }
-}
-
 
 
 
 //Initialzing number buttons and adding functionality
 const zero = document.getElementById("zero");
-zero.addEventListener("click", function() {
+zero.addEventListener("click", function () {
     buffer += "0";
 });
 
 const one = document.getElementById("one");
-one.addEventListener("click", function() {
+one.addEventListener("click", function () {
     buffer += "1";
 });
 
 const two = document.getElementById("two");
-two.addEventListener("click", function() {
+two.addEventListener("click", function () {
     buffer += "2";
 });
 
 const three = document.getElementById("three");
-three.addEventListener("click", function() {
+three.addEventListener("click", function () {
     buffer += "3";
 });
 
 const four = document.getElementById("four");
-four.addEventListener("click", function() {
+four.addEventListener("click", function () {
     buffer += "4";
 });
 
 const five = document.getElementById("five");
-five.addEventListener("click", function() {
+five.addEventListener("click", function () {
     buffer += "5";
 });
 
 const six = document.getElementById("six");
-six.addEventListener("click", function() {
+six.addEventListener("click", function () {
     buffer += "6";
 });
 
 const seven = document.getElementById("seven");
-seven.addEventListener("click", function() {
+seven.addEventListener("click", function () {
     buffer += "7";
 });
 
 const eight = document.getElementById("eight");
-eight.addEventListener("click", function() {
+eight.addEventListener("click", function () {
     buffer += "8";
 });
 
 const nine = document.getElementById("nine");
-nine.addEventListener("click", function() {
+nine.addEventListener("click", function () {
     buffer += "9";
 });
 
 
 
 
-//TODO add operator functionality
 //Addition
 const additionButton = document.getElementById("addition");
 additionButton.addEventListener("click", sum);
 
-function sum(num1, num2)
-{
-    buffer += "+";
+function sum() {
+    if (!errorTooManyOperators("+"))
+        buffer += "+";
 }
 
 //Subtraction
-const subtractButton = document.getElementById("subtract");
-subtractButton.addEventListener("click", sub);
+const subtractionButton = document.getElementById("subtraction");
+subtractionButton.addEventListener("click", sub);
 
-function sub(num1, num2)
-{
-    buffer += "-";
+function sub() {
+    if (!errorTooManyOperators("-"))
+        buffer += "-";
 }
 
-//Subtraction
+//Multiplication
 const multiplicationButton = document.getElementById("multiplication");
 multiplicationButton.addEventListener("click", mult);
 
-function mult(num1, num2)
-{
-    return num1 * num2;
+function mult() {
+    if (!errorTooManyOperators("*"))
+        buffer += "*";
 }
 
-//Subtraction
+//Division
 const divisionButton = document.getElementById("division");
 divisionButton.addEventListener("click", div);
 
-function div(num1, num2)
-{
-    return num1 / num2;
+function div() {
+    if (!errorTooManyOperators("/"))
+        buffer += "/";
 }
 
 
 
-
-function errorTooManyOperators()
-{
-    console.error("Invalid expression. Please only enter the first integer, the operation, and the second integer. \n" 
-        +"The expression will now be cleared.");
-    while(buffer.length > 0)
-    {
-        buffer.pop();
+//function that detects if there is more than one operator in the buffer
+function errorTooManyOperators(str) {
+    if (buffer.includes("+")) {
+        switch (str) {
+            case "*":
+            case "-":
+            case "/":
+            case "+":
+                console.error("Invalid expression. Please only enter the first integer, the operation, and the second integer. \n"
+                    + "The expression will now be cleared.");
+                buffer = "";
+                return true;
+            default:
+                return false;
+        }
     }
+    else if (buffer.includes("-")) {
+        switch (str) {
+            case "*":
+            case "+":
+            case "/":
+            case "-":
+                console.error("Invalid expression. Please only enter the first integer, the operation, and the second integer. \n"
+                    + "The expression will now be cleared.");
+                buffer = "";
+                return true;
+            default:
+                return false;
+        }
+    }
+    else if (buffer.includes("*")) {
+        switch (str) {
+            case "+":
+            case "-":
+            case "/":
+            case "*":
+                console.error("Invalid expression. Please only enter the first integer, the operation, and the second integer. \n"
+                    + "The expression will now be cleared.");
+                buffer = "";
+                return true;
+            default:
+                return false;
+        }
+    }
+    else if (buffer.includes("/")) {
+        switch (str) {
+            case "*":
+            case "-":
+            case "+":
+            case "/":
+                console.error("Invalid expression. Please only enter the first integer, the operation, and the second integer. \n"
+                    + "The expression will now be cleared.");
+                buffer = "";
+                return true;
+            default:
+                return false;
+        }
+    }
+    else return false;
 }
