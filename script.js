@@ -168,7 +168,7 @@ function errorNoInts()
 
 //TODO add evaluation of buffer
 const equals = document.getElementById("equals");
-equals.addEventListener("click", eval());
+equals.addEventListener("click", eval);
 
 function eval()
 {
