@@ -166,13 +166,53 @@ function errorNoInts()
 }
 
 
-//TODO add evaluation of buffer
 const equals = document.getElementById("equals");
 equals.addEventListener("click", eval);
 
 function eval()
 {
+    //parse the buffer to find operation & opearands
+    let num1 = "";
+    let num2 = "";
+    let i = 0;
+    while(/\d/.test(buffer.at(i)))
+    {
+        num1 += buffer.at(i);
+        i++;
+    }
+    let op = buffer.at(i);
+    i++;
+    while(/\d/.test(buffer.at(i)))
+    {
+        num2 += buffer.at(i);
+        i++;
+    }
 
+    let result = 0;
+    switch(op)
+    {
+        case "+":
+            result = parseInt(num1) + parseInt(num2);
+            buffer = result.toString();
+            break;
+        case "-":
+            result = parseInt(num1) - parseInt(num2);
+            buffer = result.toString();
+            break;
+        case "*":
+            result = parseInt(num1) * parseInt(num2);
+            buffer = result.toString();
+            break;
+        case "/":
+            result = parseInt(num1) / parseInt(num2);
+            buffer = result.toString();
+            break;
+        default:
+            console.error(op + " is not a valid operation. Valid operations are addition (+), subtraction (-), multiplication (*), and division (/). The expression will now be cleared.");
+            buffer = "";
+    }
+    console.log(buffer);
+    buffer = "";
 }
 
 //TODO add output to screen
