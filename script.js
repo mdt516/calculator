@@ -218,5 +218,3 @@ function eval()
 //TODO add output to screen using innerHTML
 
 //TODO add live input display and output, with error messages showing in the app UI
-
-//TODO improve UI
