@@ -215,7 +215,6 @@ function eval()
     buffer = "";
 }
 
-//TODO add output to screen using innerHTML
 function updateScreen(str)
 {
     output.innerHTML = str;
