@@ -8,51 +8,61 @@ let buffer = "";
 const zero = document.getElementById("zero");
 zero.addEventListener("click", function () {
     buffer += "0";
+    updateScreen(buffer);
 });
 
 const one = document.getElementById("one");
 one.addEventListener("click", function () {
     buffer += "1";
+    updateScreen(buffer);
 });
 
 const two = document.getElementById("two");
 two.addEventListener("click", function () {
     buffer += "2";
+    updateScreen(buffer);
 });
 
 const three = document.getElementById("three");
 three.addEventListener("click", function () {
     buffer += "3";
+    updateScreen(buffer);
 });
 
 const four = document.getElementById("four");
 four.addEventListener("click", function () {
     buffer += "4";
+    updateScreen(buffer);
 });
 
 const five = document.getElementById("five");
 five.addEventListener("click", function () {
     buffer += "5";
+    updateScreen(buffer);
 });
 
 const six = document.getElementById("six");
 six.addEventListener("click", function () {
     buffer += "6";
+    updateScreen(buffer);
 });
 
 const seven = document.getElementById("seven");
 seven.addEventListener("click", function () {
     buffer += "7";
+    updateScreen(buffer);
 });
 
 const eight = document.getElementById("eight");
 eight.addEventListener("click", function () {
     buffer += "8";
+    updateScreen(buffer);
 });
 
 const nine = document.getElementById("nine");
 nine.addEventListener("click", function () {
     buffer += "9";
+    updateScreen(buffer);
 });
 
 
@@ -63,8 +73,10 @@ const additionButton = document.getElementById("addition");
 additionButton.addEventListener("click", sum);
 
 function sum() {
-    if (!errorTooManyOperators("+") && !errorNoInts())
+    if (!errorTooManyOperators("+") && !errorNoInts()) {
         buffer += "+";
+        updateScreen(buffer);
+    }
 }
 
 //Subtraction
@@ -72,8 +84,10 @@ const subtractionButton = document.getElementById("subtraction");
 subtractionButton.addEventListener("click", sub);
 
 function sub() {
-    if (!errorTooManyOperators("-") && !errorNoInts())
+    if (!errorTooManyOperators("-") && !errorNoInts()) {
         buffer += "-";
+        updateScreen(buffer);
+    }
 }
 
 //Multiplication
@@ -81,8 +95,10 @@ const multiplicationButton = document.getElementById("multiplication");
 multiplicationButton.addEventListener("click", mult);
 
 function mult() {
-    if (!errorTooManyOperators("*") && !errorNoInts())
+    if (!errorTooManyOperators("*") && !errorNoInts()) {
         buffer += "*";
+        updateScreen(buffer);
+    }
 }
 
 //Division
@@ -90,8 +106,10 @@ const divisionButton = document.getElementById("division");
 divisionButton.addEventListener("click", div);
 
 function div() {
-    if (!errorTooManyOperators("/") && !errorNoInts())
+    if (!errorTooManyOperators("/") && !errorNoInts()) {
         buffer += "/";
+        updateScreen(buffer);
+    }
 }
 
 
@@ -164,6 +182,12 @@ function errorNoInts()
     console.error("Please input a number before attempting any operations.");
     return !hasInt;
 }
+
+const clear = document.getElementById("clear");
+clear.addEventListener("click", function()
+{
+    updateScreen("");
+});
 
 
 const equals = document.getElementById("equals");
