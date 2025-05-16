@@ -102,6 +102,7 @@ function mult() {
 }
 
 //Division
+// TODO: transalte "NaN" into "Undefined" for for numbers divided by 0
 const divisionButton = document.getElementById("division");
 divisionButton.addEventListener("click", div);
 
@@ -186,7 +187,8 @@ function errorNoInts()
 const clear = document.getElementById("clear");
 clear.addEventListener("click", function()
 {
-    updateScreen("");
+    buffer = "";
+    updateScreen(buffer);
 });
 
 
