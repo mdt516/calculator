@@ -245,5 +245,3 @@ function updateScreen(str)
 {
     output.innerHTML = str;
 }
-
-//TODO add live input display and output, with error messages showing in the app UI
