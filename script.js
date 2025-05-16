@@ -211,10 +211,14 @@ function eval()
             console.error(op + " is not a valid operation. Valid operations are addition (+), subtraction (-), multiplication (*), and division (/). The expression will now be cleared.");
             buffer = "";
     }
-    console.log(buffer);
+    updateScreen(buffer);
     buffer = "";
 }
 
 //TODO add output to screen using innerHTML
+function updateScreen(str)
+{
+    output.innerHTML = str;
+}
 
 //TODO add live input display and output, with error messages showing in the app UI
