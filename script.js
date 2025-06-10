@@ -2,7 +2,7 @@ let output = document.getElementById("output");
 
 let buffer = "";
 
-
+// TODO: add ability to do operations on 3 numbers
 
 //Initialzing number buttons and adding functionality
 const zero = document.getElementById("zero");
