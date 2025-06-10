@@ -1,24 +1,27 @@
+body {
+    background-color: bbdef0;
+}
+
 .calculator-container {
-    background-color: red;
-    gap: 10px;
+    background-color: 00a6a6;
+    max-width: 250px;
     border-radius: 10px;
     margin: auto
 }
 
 .calculator-container h1 {
-    background-color: yellow;
     text-align: center;
     border-radius: 10px;
 }
 
 .display-container {
-    background-color: orange;
+    background-color: efca08;
     text-align: center;
     box-shadow: 15px, rgba(0, 0, 0, 0.1); /* TODO fix shadow */
 }
 
 .display-container #output {
-    background-color: aqua;
+    background-color: f49f0a;
     border-radius: 10px;
     min-height: 1em;
 }
@@ -29,7 +32,7 @@
 }
 
 .numbers {
-    background-color: green;
+    background-color: f08700;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
@@ -37,7 +40,10 @@
     border-radius: 10px;
 }
 .numbers button {
+    width: 50;
+    aspect-ratio: 1 / 1;
     border-radius: 10px;
+    margin: auto;
 }
 
 .operators {
