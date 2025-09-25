@@ -177,16 +177,14 @@ function errorTooManyOperators(str) {
 }
 
 //checks if a number is not present in the buffer when trying to do an operation
-function errorNoInts()
-{
+function errorNoInts() {
     let hasInt = /\d/.test(buffer); //regex to find if a digit exists
     console.error("Please input a number before attempting any operations.");
     return !hasInt;
 }
 
 const clear = document.getElementById("clear");
-clear.addEventListener("click", function()
-{
+clear.addEventListener("click", function () {
     buffer = "";
     updateScreen(buffer);
 });
@@ -195,28 +193,24 @@ clear.addEventListener("click", function()
 const equals = document.getElementById("equals");
 equals.addEventListener("click", evaluate);
 
-function evaluate()
-{
+function evaluate() {
     //parse the buffer to find operation & opearands
     let num1 = "";
     let num2 = "";
     let i = 0;
-    while(/\d/.test(buffer.at(i)))
-    {
+    while (/\d/.test(buffer.at(i))) {
         num1 += buffer.at(i);
         i++;
     }
     let op = buffer.at(i);
     i++;
-    while(/\d/.test(buffer.at(i)))
-    {
+    while (/\d/.test(buffer.at(i))) {
         num2 += buffer.at(i);
         i++;
     }
 
     let result = 0;
-    switch(op)
-    {
+    switch (op) {
         case "+":
             result = parseInt(num1) + parseInt(num2);
             buffer = result.toString();
@@ -241,7 +235,6 @@ function evaluate()
     buffer = "";
 }
 
-function updateScreen(str)
-{
+function updateScreen(str) {
     output.innerHTML = str;
 }
