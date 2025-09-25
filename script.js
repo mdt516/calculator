@@ -193,9 +193,9 @@ clear.addEventListener("click", function()
 
 
 const equals = document.getElementById("equals");
-equals.addEventListener("click", eval);
+equals.addEventListener("click", evaluate);
 
-function eval()
+function evaluate()
 {
     //parse the buffer to find operation & opearands
     let num1 = "";
